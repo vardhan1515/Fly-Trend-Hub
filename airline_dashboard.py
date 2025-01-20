@@ -4,6 +4,19 @@ import pandas as pd
 import plotly.express as px
 import sqlite3
 
+def apply_css():
+    st.markdown(
+        f"""
+        <style>
+        {open("style.css").read()}
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+apply_css()
+
+
 # Title and header
 st.title("✈️ Airline Data Interactive Dashboard")
 st.markdown("### Explore insights from airline data interactively.")

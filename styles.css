@@ -1,0 +1,65 @@
+/* Set the background image for the entire page */
+body {
+    background-image: url('air_line.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #ffffff; /* Make text white for better contrast */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Customize the title */
+h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    margin-top: 20px;
+    color: #FFD700; /* Golden title */
+}
+
+/* Style the sidebar */
+.sidebar .sidebar-content {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    padding: 20px;
+    border-radius: 10px;
+    color: #FFFFFF;
+}
+
+/* Style key metrics */
+.metric-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.metric {
+    background: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    padding: 15px;
+    margin: 5px;
+    border-radius: 8px;
+    text-align: center;
+    color: #FFD700; /* Gold-colored numbers */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Charts section */
+.chart-container {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    color: #FFD700;
+    font-size: 0.9rem;
+}
