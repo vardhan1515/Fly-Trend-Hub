@@ -4,26 +4,15 @@ import pandas as pd
 import plotly.express as px
 import sqlite3
 
-# Function to apply custom CSS for background image
-def set_background_image(image_path):
-    st.markdown(
-        f"""
-        <style>
-        body {{
-            background-image: url('{image_path}');
-            background-size: cover;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-position: center;
-            color: #ffffff; /* Text color for visibility */
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
+# Load background image and encode it
+if "background_image" not in st.session_state:
+    with open("air_line.png", "rb") as img_file:
+        st.session_state["background_image"] = base64.b64encode(img_file.read()).decode()
 
-# Set the background image
-set_background_image('static/air_line.png')
+# Link the external CSS
+with open("styles.css", "r") as css_file:
+    css = css_file.read().replace("{background_image}", st.session_state["background_image"])
+    st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
 # Title and header
 st.title("✈️ Airline Data Interactive Dashboard")
