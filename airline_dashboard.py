@@ -4,18 +4,26 @@ import pandas as pd
 import plotly.express as px
 import sqlite3
 
-def apply_css():
+# Function to apply custom CSS for background image
+def set_background_image(image_path):
     st.markdown(
         f"""
         <style>
-        {open("styles.css").read()}
+        body {{
+            background-image: url('{image_path}');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #ffffff; /* Text color for visibility */
+        }}
         </style>
         """,
         unsafe_allow_html=True,
     )
 
-apply_css()
-
+# Set the background image
+set_background_image('static/air_line.png')
 
 # Title and header
 st.title("✈️ Airline Data Interactive Dashboard")
@@ -75,7 +83,6 @@ selected_continent = st.sidebar.selectbox(
     options=["All"] + airport_df['Continents'].dropna().unique().tolist(),
     index=0
 )
-
 selected_airport_count = st.sidebar.slider("Number of Top Airports", 5, 10, 10)
 
 # Applying filters
