@@ -8,7 +8,7 @@ def apply_css():
     st.markdown(
         f"""
         <style>
-        {open("style.css").read()}
+        {open("styles.css").read()}
         </style>
         """,
         unsafe_allow_html=True,
