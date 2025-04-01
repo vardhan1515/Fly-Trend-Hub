@@ -1,65 +1,90 @@
-/* Set the background image for the entire page */
-body {
-    background-image: url('air_line.png');
+/* General App Styling */
+[data-testid="stAppViewContainer"] {
+    background-image: url("data:image/png;base64,{background_image}");
     background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
     background-position: center;
-    color: #ffffff; /* Make text white for better contrast */
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    color: #000000; /* Default text color set to black */
 }
 
-/* Customize the title */
+/* Title and Header */
 h1 {
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 2.8rem;
+    font-weight: 800; /* Bold title */
     text-align: center;
-    margin-top: 20px;
-    color: #FFD700; /* Golden title */
+    margin-top: 25px;
+    color: #000000; /* Black title */
 }
 
-/* Style the sidebar */
-.sidebar .sidebar-content {
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
-    padding: 20px;
-    border-radius: 10px;
-    color: #FFFFFF;
+/* Subheaders */
+h2, h3 {
+    font-size: 1.5rem; /* Slightly smaller for subheadings */
+    font-weight: 700; /* Bold subheadings */
+    color: #000000; /* Black text */
+    margin-bottom: 15px;
 }
 
-/* Style key metrics */
+/* Paragraphs */
+p {
+    color: #000000; /* Black text for paragraphs */
+    font-size: 1rem;
+    font-weight: 400; /* Normal weight for paragraphs */
+}
+
+/* Key Metrics Container */
 .metric-container {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 .metric {
-    background: rgba(0, 0, 0, 0.5); /* Transparent black background */
-    padding: 15px;
-    margin: 5px;
-    border-radius: 8px;
-    text-align: center;
-    color: #FFD700; /* Gold-colored numbers */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-
-/* Charts section */
-.chart-container {
+    background: none; /* Remove background highlight */
     padding: 20px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 15px;
-    margin: 20px 0;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    margin: 5px;
+    border-radius: 0; /* Remove rounded corners */
+    text-align: center;
+    color: #000000; /* Black text for metrics */
+    font-size: 1.1rem;
+    font-weight: bold; /* Bold text for metrics */
+    box-shadow: none; /* Remove shadow */
+    transition: transform 0.3s ease;
 }
 
-/* Footer styling */
+.metric:hover {
+    transform: translateY(-5px);
+}
+
+/* Chart Container */
+.chart-container {
+    padding: 25px;
+    margin: 25px 0;
+    background: rgba(0, 0, 0, 0.5); /* Transparent black background for charts */
+    border-radius: 15px; /* Rounded edges for charts */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for charts */
+    color: #000000; /* Black text for charts */
+}
+
+/* Chart Titles */
+.chart-container h2 {
+    font-size: 1.5rem;
+    font-weight: 700; /* Bold titles for charts */
+    color: #000000; /* Black title for charts */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Footer Styling */
 footer {
     text-align: center;
     margin-top: 20px;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 5px;
-    color: #FFD700;
-    font-size: 0.9rem;
+    padding: 15px;
+    background: none; /* Remove the black transparent background */
+    border-radius: 0; /* Remove rounded corners */
+    color: #000000; /* Black text */
+    font-size: 1rem;
+    font-weight: bold; /* Bold footer text */
+    box-shadow: none; /* Remove shadows */
 }

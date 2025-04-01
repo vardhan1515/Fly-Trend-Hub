@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import sqlite3
+import os
 import base64
 
 # Load background image and encode it
@@ -15,11 +16,23 @@ with open("styles.css", "r") as css_file:
     css = css_file.read().replace("{background_image}", st.session_state["background_image"])
     st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
+# # Link the external CSS
+# if os.path.exists("styles.css"):
+#     with open("styles.css", "r") as css_file:
+#         css = css_file.read().replace(
+#             "{background_image}", 
+#             f"url('data:image/png;base64,{st.session_state['background_image']}')"
+#         )
+#         st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
+#         print(css)  # Debug: Print the resulting CSS to verify the background URL
+# else:
+#     st.error("CSS file 'styles.css' not found. Please check your directory.")
+
 # Title and header
 st.title("✈️ Airline Data Interactive Dashboard")
 st.markdown("### Explore insights from airline data interactively.")
 
-# Loading the data from the database
+# Function to load data
 @st.cache_data
 def load_data(db_path="airline_database_111.db"):
     try:
@@ -44,7 +57,7 @@ def load_data(db_path="airline_database_111.db"):
 # Loading data
 passenger_df, flight_df, airport_df, passenger_flight_df = load_data()
 
-# Ensure dataframes are not empty
+# Check for data availability
 if passenger_df.empty or flight_df.empty or airport_df.empty or passenger_flight_df.empty:
     st.error("No data available to display. Please check your database.")
     st.stop()
@@ -172,4 +185,3 @@ else:
 
 # Footer
 st.markdown("---")
-st.markdown("**Dashboard Created by Vardhan Burande** | Powered by Streamlit 🚀")
